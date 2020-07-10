@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360&deg; Image</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    <script src="https://3d.io/releases/3dio-js/1.0.0-beta.74/3dio.min.js"></script>
+    <script>
+    
+
+   AFRAME.registerComponent('click_1', {　
+      init: function () {
+        // Listen for click event
+        let self = this;
+        let el = this.el;
+        this.el.addEventListener('click', function (evt) {
+          let hi1 = document.querySelector('#plus1');
+          hi1.setAttribute("visible","true");          
+        });
+      }
+
+    });
+
+   AFRAME.registerComponent('click_2', {　
+      init: function () {
+        // Listen for click event
+        let self = this;
+        let el = this.el;
+        this.el.addEventListener('click', function (evt) {
+          let hi1 = document.querySelector('#plus2');
+          hi1.setAttribute("visible","true");
+          });
+      }
+
+    });
+
+   AFRAME.registerComponent('click_3', {　
+      init: function () {
+        // Listen for click event
+        let self = this;
+        let el = this.el;
+        this.el.addEventListener('click', function (evt) {
+          let hi1 = document.querySelector('#plus3');
+          hi1.setAttribute("visible","true");
+         });
+      }
+
+    });
+
+   AFRAME.registerComponent('click_4', {　
+      init: function () {
+        // Listen for click event
+        let self = this;
+        let el = this.el;
+        this.el.addEventListener('click', function (evt) {
+        let hi1 = document.querySelector('#plus4');
+          hi1.setAttribute("visible","true");
+       });
+      }
+
+    });
+
+   AFRAME.registerComponent('click_5', {　
+      init: function () {
+        // Listen for click event
+        let self = this;
+        let el = this.el;
+        this.el.addEventListener('click', function (evt) {
+          let hi1 = document.querySelector('#plus5');
+          hi1.setAttribute("visible","true");
+       });
+      }
+
+    });
+
+   AFRAME.registerComponent('click_6', {　
+      init: function () {
+        // Listen for click event
+        let self = this;
+        let el = this.el;
+        this.el.addEventListener('click', function (evt) {
+         let hi1 = document.querySelector('#plus6');
+          hi1.setAttribute("visible","true");
+       });
+      }
+
+    });
+
+    AFRAME.registerComponent('click_7', {　
+      init: function () {
+        // Listen for click event
+        let self = this;
+        let el = this.el;
+        this.el.addEventListener('click', function (evt) {
+          let hi1 = document.querySelector('#plus1');
+          let hi2 = document.querySelector('#plus2');
+          let hi3 = document.querySelector('#plus3');
+          let hi4 = document.querySelector('#plus4');
+          let hi5 = document.querySelector('#plus5');
+          let hi6 = document.querySelector('#plus6');
+          hi1.setAttribute("visible","false");
+          hi2.setAttribute("visible","false");
+          hi3.setAttribute("visible","false");
+          hi4.setAttribute("visible","false");
+          hi5.setAttribute("visible","false");
+          hi6.setAttribute("visible","false");
+       });
+      }
+
+    });
+   
+    
+   AFRAME.registerComponent('click-listener', {　
+      init: function () {
+        // Listen for click event
+        let self = this;
+        let el = this.el;
+        this.el.addEventListener('click', function (evt) {
+          // Call the Octahedron and trigger it's scalewave animation
+          let car = document.querySelector('#changed-model');
+          let color = el.getAttribute('material', 'color');
+         car.emit('ml', color);
+        });
+      }
+
+    });
+  </script>
+  </head>
+
+  <body>
+    <a-scene>
+<
+      <a-assets> 
+        
+       
+                             
+              <a-assets-item id="gltfcar" src="https://mahy.imfast.io/3d/scene.gltf"></a-assets-item>
+      </a-assets>
+
+      <!--*************HOTSPOST*************-->
+
+              <a-image id="plusPhoto1" look-controls src="https://i.ibb.co/wML2j0s/XR-Hotspot.png" width="0.15" height="0.15" position="0.1 0.8 2" class="clickable" click_1></a-image> 
+              <a-image id="plusPhoto2" look-controls src="https://i.ibb.co/wML2j0s/XR-Hotspot.png" width="0.18" height="0.18" position="-0.7 0.8 1.78" class="clickable" click_2></a-image> 
+              <a-image id="plusPhoto3" look-controls src="https://i.ibb.co/wML2j0s/XR-Hotspot.png" width="0.18" height="0.18" position="-0.77 0.3 -1" class="clickable" click_3></a-image> 
+              <a-image id="plusPhoto4" look-controls src="https://i.ibb.co/wML2j0s/XR-Hotspot.png" width="0.18" height="0.18" position="0.11 0.55 -1.97" class="clickable" click_4></a-image> 
+              <a-image id="plusPhoto5" look-controls src="https://i.ibb.co/wML2j0s/XR-Hotspot.png" width="0.18" height="0.18" position="0.9 0.8 -1.1" class="clickable" click_5></a-image> 
+              <a-image id="plusPhoto6" look-controls src="https://i.ibb.co/wML2j0s/XR-Hotspot.png" width="0.18" height="0.18" position="0.9 0.75 1.78" class="clickable" click_6></a-image>
+      
+      <!--**********HOTSPOST-END********-->
+      
+      
+
+      <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
+      <a-sky src="https://i.ibb.co/HGsCBBF/warehouse.png" position="0.5 0.5 3"></a-sky>
+      <a-entity id="changed-model"  gltf-model="#gltfcar"  scale="1 1 1" position="0.4 0.5 0" ></a-entity>
+
+      <a-entity  id="redBall"
+      class="clickable" geometry="primitive: sphere; radius: 0.133" position="0.5 0.5 3" material="color: #FF0000" click-listener ></a-entity>
+      <a-entity  id="blueBall"
+      class="clickable" geometry="primitive: sphere; radius: 0.133" position="-0.5 0.5 3" material="color: #0000FF" click-listener ></a-entity>
+      <a-entity  id="blackeBall"
+      class="clickable" geometry="primitive: sphere; radius: 0.133" position="0.05 0.5 3" material="color: #000000" click-listener ></a-entity>
+
+        <!--*************HOTSPOST-POPUP*************-->
+
+        <!--$$$$$$$$ Enter the car details in place of "ENTER YOUR TEXT-xxx"  SEGMENT $$$$$$$$ -->
+      
+            <a-entity id="plus1"
+              geometry="primitive: plane; width: 3.5; height: auto; "  text="align: center; width: 3.9; wrapCount: 15; height: 9; value:  ENTER YOUR TEXT-ENGINE "  look-controls
+               material="side: double; color: #EF2D5E; shader: flat; alphaTest:  0.1; transparent: true; opacity: 0.5" position="0.1 1.2 1.7" scale="0.5 0.5 0.5"  visible="false" >
+              <a-image id="plus11" look-controls src="https://i.ibb.co/gWRQYVc/cb.png" width="0.18" height="0.18" position="2.06 0.5 0.85" class="clickable" click_7>
+                   
+                 </a-image>
+               </a-entity>
+
+
+            <a-entity id="plus2"
+              geometry="primitive: plane; width: 3.5; height: auto; "  text="align: center; width: 3.9; wrapCount: 15 height: 9; value: ENTER YOUR TEXT-LEFT MIRROR "  look-controls
+               material="side: double; color: #EF2D5E; shader: flat; alphaTest:  0.1; transparent: true; opacity: 0.5" position="-1.7 1.1 1.7" scale="0.5 0.5 0.5"  visible="false" >
+                 <a-image id="plus11" look-controls src="https://i.ibb.co/gWRQYVc/cb.png" width="0.18" height="0.18" position="2.65 0.5 0.85" class="clickable" click_7></a-image>
+               </a-entity>
+
+
+            <a-entity id="plus3"
+              geometry="primitive: plane; width: 3.5; height: auto; "  text="align: center; width: 3.9; wrapCount: 15 height: 9; value: ENTER YOUR TEXT-TYRE "  look-controls
+               material="side: double; color: #EF2D5E; shader: flat; alphaTest:  0.1; transparent: true; opacity: 0.5" position="-1.7 0.5 -1.4" scale="0.5 0.5 0.5"  visible="false" >
+                 <a-image id="plus11" look-controls src="https://i.ibb.co/gWRQYVc/cb.png" width="0.18" height="0.18" position="-0.5 0.5 0.85" class="clickable" click_7>                  
+                 </a-image>
+               </a-entity>
+
+
+            <a-entity id="plus4"
+              geometry="primitive: plane; width: 3.5; height: auto; "  text="align: center; width: 3.9; wrapCount: 15 height: 9; value: ENTER YOUR TEXT-BACK DOOR "  look-controls
+               material="side: double; color: #EF2D5E; shader: flat; alphaTest:  0.1; transparent: true; opacity: 0.5" position="0.11 1 -2" scale="0.5 0.5 0.5"  visible="false" >
+                 <a-image id="plus11" look-controls src="https://i.ibb.co/gWRQYVc/cb.png" width="0.18" height="0.18" position="0.3 0.5 0.85" class="clickable" click_7>
+                   
+                 </a-image>
+               </a-entity>
+
+
+              <a-entity id="plus5"
+              geometry="primitive: plane; width: 3.5; height: auto; "  text="align: center; width: 3.9; wrapCount: 15 height: 9; value: ENTER YOUR TEXT-BACK RIGHT LIGHT "  look-controls
+               material="side: double; color: #EF2D5E; shader: flat; alphaTest:  0.1; transparent: true; opacity: 0.5" position="1.9 1 -1.2" scale="0.5 0.5 0.5"  visible="false" >
+                 <a-image id="plus11" look-controls src="https://i.ibb.co/gWRQYVc/cb.png" width="0.18" height="0.18" position="1.6 0.3 0.85" class="clickable" click_7>
+                   
+                 </a-image>
+               </a-entity>
+
+
+              <a-entity id="plus6"
+              geometry="primitive: plane; width: 3.5; height: auto; "  text="align: center; width: 3.9; wrapCount: 15 height: 9; value: ENTER YOUR TEXT-RIGHT MIRROR "  look-controls
+               material="side: double; color: #EF2D5E; shader: flat; alphaTest:  0.1; transparent: true; opacity: 0.5" position="1.96 1.4 0.85" scale="0.5 0.5 0.5"  visible="false" >
+                  <a-image id="plus11" look-controls src="https://i.ibb.co/gWRQYVc/cb.png" width="0.18" height="0.18" position="1.5 0.5 0.85" class="clickable" click_7>
+                    
+                  </a-image>
+               </a-entity>
+           
+           <!--*************HOTSPOST-POPUP-END *************-->
+      
+
+        <a-entity camera orbit-controls="initialPosition: 2 1.5 4"></a-entity>
+ 
+    </a-scene>
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+</html>
